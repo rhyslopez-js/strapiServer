@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "luccy_products",
+  "info": {
+    "singularName": "luccy-product",
+    "pluralName": "luccy-products",
+    "displayName": "Luccy! Products"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ProductTitle": {
+      "type": "string"
+    },
+    "ProductImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ProductsDescription": {
+      "type": "richtext"
+    }
+  }
+}

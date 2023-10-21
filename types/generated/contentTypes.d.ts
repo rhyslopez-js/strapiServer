@@ -677,6 +677,68 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiLuccyHomeLuccyHome extends Schema.SingleType {
+  collectionName: 'luccy_homes';
+  info: {
+    singularName: 'luccy-home';
+    pluralName: 'luccy-homes';
+    displayName: 'Luccy! Home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Logo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::luccy-home.luccy-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::luccy-home.luccy-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLuccyProductLuccyProduct extends Schema.CollectionType {
+  collectionName: 'luccy_products';
+  info: {
+    singularName: 'luccy-product';
+    pluralName: 'luccy-products';
+    displayName: 'Luccy! Products';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ProductTitle: Attribute.String;
+    ProductImage: Attribute.Media;
+    ProductsDescription: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::luccy-product.luccy-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::luccy-product.luccy-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -693,6 +755,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::luccy-home.luccy-home': ApiLuccyHomeLuccyHome;
+      'api::luccy-product.luccy-product': ApiLuccyProductLuccyProduct;
     }
   }
 }
