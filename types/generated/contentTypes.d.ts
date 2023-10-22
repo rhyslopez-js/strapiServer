@@ -713,6 +713,7 @@ export interface ApiLuccyProductLuccyProduct extends Schema.CollectionType {
     singularName: 'luccy-product';
     pluralName: 'luccy-products';
     displayName: 'Luccy! Products';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -721,6 +722,7 @@ export interface ApiLuccyProductLuccyProduct extends Schema.CollectionType {
     ProductTitle: Attribute.String;
     ProductImage: Attribute.Media;
     ProductsDescription: Attribute.RichText;
+    Price: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
